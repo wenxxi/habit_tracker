@@ -8,48 +8,47 @@
 import SwiftUI
 
 
-struct ContentView: View {
+struct ContentView2: View {
     var body: some View {
         NavigationView {
             VStack{
                 Text(Date(), style: .date)
                     .font(.largeTitle)
                     .fontWeight(.bold)
-                HStack{
-                    VStack(alignment: .leading){
+                
+                VStack{
+                    HStack(alignment: .top){
                         HStack(alignment: .firstTextBaseline){
-                            Image(systemName:"book.fill").foregroundColor(Color.white)
-                                .padding(.vertical)
-                                .padding(.leading, 10)
-                            Text("abcdefghij").font(.title3).fontWeight(.bold).foregroundColor(Color.white)
+                            Image(systemName:"book.fill").foregroundColor(Color.white).padding()
+                            Text("Habit1").font(.title3).fontWeight(.bold).foregroundColor(Color.white).padding()
                         }
                         Spacer()
-                        
-                        HStack{
-                            ForEach(0..<7){ index in
-                                Circle()
-                                    .stroke(Color.white, lineWidth: 2)
-                                    .frame(width:10,height:10)
-                                    .padding(.leading, 10)
-                            }
+                        Button(action:{
+                            //button function
+                        }){
+
+                            Color.blue
+                                .frame(width: 80, height: 80)
+                                .cornerRadius(10)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius:10)
+                                        .stroke(Color.white, lineWidth:2)
+                                )
+
                         }
-                        Spacer()
+                    }
+                    //Spacer()
+                    HStack{
+                        ForEach(0..<7){ index in
+                            Circle()
+                                .stroke(Color.white, lineWidth: 2)
+                            .frame(width:10,height:10)
+                            
+                        }
                         
                     }
+                    .frame(width: /*@START_MENU_TOKEN@*/10.0/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/10.0/*@END_MENU_TOKEN@*/)
                     Spacer()
-                    Button(action:{
-                        //button function
-                    }){
-                        
-                        Color.blue
-                            .frame(width: 80, height: 80)
-                            .cornerRadius(10)
-                            .overlay(
-                                RoundedRectangle(cornerRadius:10)
-                                    .stroke(Color.white, lineWidth:2)
-                            )
-                        
-                    }
                 }
                     .frame(width: 300, height: 80)
                     .padding()
