@@ -58,8 +58,8 @@ struct ContentView: View {
                 Spacer()
             }
             .padding()
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbar{
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar{
                     ToolbarItem(placement: .principal){
                         Text("Tracker")
                             .font(.title)
