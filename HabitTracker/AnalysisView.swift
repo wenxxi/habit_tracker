@@ -14,6 +14,8 @@ struct AnalysisView: View{
             VStack{
                 HStack(alignment: .top){
                     Spacer()
+                    Spacer()
+                    Spacer()
                     VStack{
                         Text("FROM")
                             .font(.title3)
@@ -25,27 +27,34 @@ struct AnalysisView: View{
                             .fontWeight(.bold)
                     }
                     VStack{
-                        DatePicker("", selection: $start_date, displayedComponents: .date).padding()
-                        DatePicker("", selection: $start_date, displayedComponents: .date).padding([.leading, .bottom, .trailing])
+                        DatePicker("", selection: $start_date, displayedComponents: .date).padding([.top, .bottom, .trailing])
+                        DatePicker("", selection: $start_date, displayedComponents: .date).padding([.bottom, .trailing])
                     }
+                    Spacer()
                     Spacer()
                 }
                 Spacer()
-//                HStack{
-//                    Text("FROM").font(.title3).fontWeight(.bold).padding()
-//                    DatePicker("",selection: $start_date,displayedComponents: .date)
-//                        .frame(width: 80.0, height: 30.0)
-//                        .datePickerStyle(.compact)
-//                        .padding(.all)
-//                }
-//                HStack{
-//                    Text("TO").font(.title3).fontWeight(.bold).padding()
-//                    DatePicker("",selection: $start_date,displayedComponents: .date)
-//                        .frame(width: 80.0, height: 30.0)
-//                        .datePickerStyle(.compact)
-//                        .padding(.all)
-//                }
-//
+                HStack{
+                    Spacer()
+                    Spacer()
+
+                    GeometryReader{ geometry in
+                        let recWidth = geometry.size.width * 0.6
+                        let recHeight = geometry.size.height
+                        VStack{
+                            Text("Habit1").font(.title3).fontWeight(.bold).padding([.top, .bottom, .trailing])
+                        }
+                        VStack(alignment: .center){
+                            Rectangle()
+                            .frame(width: recWidth, height: recHeight)
+                            .foregroundColor(Color.clear)
+                            .overlay(Rectangle().frame(width: nil, height: 2, alignment: .top).foregroundColor(Color.blue), alignment: .top)
+                            .overlay(Rectangle().frame(width: 2, height: nil, alignment: .leading).foregroundColor(Color.blue), alignment: .leading)
+                            
+                        }
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    }
+                }
             }
             .navigationBarTitleDisplayMode(.inline)
             .toolbar{
