@@ -9,6 +9,7 @@ import SwiftUI
 
 
 struct ContentView: View {
+    @State private var isShowingSheet = false
     var body: some View {
         NavigationView {
             VStack{
@@ -71,15 +72,20 @@ struct ContentView: View {
                             
                     }
                     ToolbarItem(placement: .navigationBarTrailing){
-                        Button(action:{}, label:{Image(systemName: "plus.app.fill" )})
+                        Button(action:{
+                            isShowingSheet.toggle()
+                        }, label:{Image(systemName: "plus.app.fill" )})
+//                        TODO: onDismiss
+                        .sheet(isPresented: $isShowingSheet) {
+//                        TODO: add habit window
+                        }
                     }
                     ToolbarItem(placement: .navigationBarLeading){
                         NavigationLink {
                             AnalysisView()
                         } label: {
                             Image(systemName:"chart.bar.fill")
-                        }
-
+                            }
                         }
                     }
                     

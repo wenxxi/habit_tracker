@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		A9896D6B2A82247200D4C784 /* HabitPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9896D6A2A82247200D4C784 /* HabitPageView.swift */; };
 		A9896D6D2A8235ED00D4C784 /* AnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9896D6C2A8235ED00D4C784 /* AnalysisView.swift */; };
-		A9CB9C042A8F14CA0098186C /* AddHabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CB9C032A8F14CA0098186C /* AddHabitView.swift */; };
 		A9D730502A7E0B9C003D962B /* HabitTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D7304F2A7E0B9C003D962B /* HabitTrackerApp.swift */; };
 		A9D730522A7E0B9C003D962B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D730512A7E0B9C003D962B /* ContentView.swift */; };
 		A9D730542A7E0B9E003D962B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9D730532A7E0B9E003D962B /* Assets.xcassets */; };
@@ -39,7 +38,6 @@
 /* Begin PBXFileReference section */
 		A9896D6A2A82247200D4C784 /* HabitPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitPageView.swift; sourceTree = "<group>"; };
 		A9896D6C2A8235ED00D4C784 /* AnalysisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisView.swift; sourceTree = "<group>"; };
-		A9CB9C032A8F14CA0098186C /* AddHabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitView.swift; sourceTree = "<group>"; };
 		A9D7304C2A7E0B9C003D962B /* HabitTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabitTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9D7304F2A7E0B9C003D962B /* HabitTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitTrackerApp.swift; sourceTree = "<group>"; };
 		A9D730512A7E0B9C003D962B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -104,7 +102,6 @@
 				A9D730512A7E0B9C003D962B /* ContentView.swift */,
 				A9896D6A2A82247200D4C784 /* HabitPageView.swift */,
 				A9896D6C2A8235ED00D4C784 /* AnalysisView.swift */,
-				A9CB9C032A8F14CA0098186C /* AddHabitView.swift */,
 				A9D730532A7E0B9E003D962B /* Assets.xcassets */,
 				A9D730552A7E0B9E003D962B /* Preview Content */,
 			);
@@ -270,7 +267,6 @@
 				A9D730522A7E0B9C003D962B /* ContentView.swift in Sources */,
 				A9896D6B2A82247200D4C784 /* HabitPageView.swift in Sources */,
 				A9D730502A7E0B9C003D962B /* HabitTrackerApp.swift in Sources */,
-				A9CB9C042A8F14CA0098186C /* AddHabitView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
