@@ -64,10 +64,16 @@ struct AnalysisView: View{
                         .fontWeight(.bold)
                 }
                 ToolbarItem(placement: .navigationBarLeading){
-                    Button(action:{}, label:{Image(systemName:"house.fill")})
+                    NavigationLink {
+                        ContentView()
+                    } label: {
+                        Image(systemName:"house.fill")
+                    }
+
                 }
             }
         }
+        .navigationBarBackButtonHidden(true)
     }
     struct AnalysisView_Previews: PreviewProvider {
         static var previews: some View {
