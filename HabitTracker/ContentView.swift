@@ -74,7 +74,12 @@ struct ContentView: View {
                         Button(action:{}, label:{Image(systemName: "plus.app.fill" )})
                     }
                     ToolbarItem(placement: .navigationBarLeading){
-                        Button(action:{}, label:{Image(systemName: "chart.bar.fill")})
+                        NavigationLink {
+                            AnalysisView()
+                        } label: {
+                            Image(systemName:"chart.bar.fill")
+                        }
+
                         }
                     }
                     
