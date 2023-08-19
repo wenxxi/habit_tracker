@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var isShowingSheet = false
+    @State private var input = ""
     var body: some View {
         NavigationView {
             VStack{
@@ -68,9 +69,8 @@ struct ContentView: View {
                         Text("Tracker")
                             .font(.title)
                             .fontWeight(.bold)
-            
-                            
                     }
+                
                     ToolbarItem(placement: .navigationBarTrailing){
                         Button(action:{
                             isShowingSheet.toggle()
@@ -78,6 +78,20 @@ struct ContentView: View {
 //                        TODO: onDismiss
                         .sheet(isPresented: $isShowingSheet) {
 //                        TODO: add habit window
+                                Form{
+                                    HStack{
+                                        Text("Name")
+                                            .font(.headline)
+                                            .fontWeight(.bold)
+                                        TextField("Title",text: $input)
+                                            .keyboardType(.default)
+                                            .textFieldStyle(.roundedBorder).padding()
+                                    }
+                                    
+                                    
+
+                                }
+                                
                         }
                     }
                     ToolbarItem(placement: .navigationBarLeading){
