@@ -18,19 +18,30 @@ struct ColorSelector : View{
         }
 }
 
-//struct IconSelector : View{
-//    @Binding var habitIcon : String
-//    let iconsList: [String]
-//    var body: some View{
-//
-//    }
-//}
+//TODO: SF Symbol selector
+struct IconSelector : View{
+    let symbols = [
+           "star", "heart", "square.and.arrow.up", "moon", "cloud", "bolt",
+           "sun.max", "leaf", "flame", "drop", "bell", "camera", "pencil"]
+    @Binding var habitIcon : String
+    var body: some View{
+        
+        Picker("Select a symbol", selection: $habitIcon) {
+                    ForEach(symbols, id: \.self) { symbolName in
+                        Image(systemName: symbolName)
+                            .tag(symbolName)
+                    }
+                }
+    }
+}
 
 struct ContentView: View {
     @State private var isShowingSheet = false
     @State private var input = ""
     @State private var habitColor = Color.blue
     @State private var tempColor = Color.blue
+    @State private var habitIcon = "heart"
+    let symbols = ["heart", "star", "circle"]
     
     var body: some View {
         NavigationView {
@@ -100,7 +111,8 @@ struct ContentView: View {
                         }, label:{Image(systemName: "plus.app.fill" )})
 //                        TODO: onDismiss
                         .sheet(isPresented: $isShowingSheet) {
-//                        TODO: add habit window
+                            NavigationView{
+                                //TODO: add habit window
                                 Form{
                                     HStack{
                                         Text("Name")
@@ -111,8 +123,19 @@ struct ContentView: View {
                                             .textFieldStyle(.roundedBorder).padding()
                                     }
                                     ColorSelector(habitColor: $habitColor)
-                                    
+                                    //  TODO: Icon Selector
+                                    IconSelector(habitIcon: $habitIcon)
                                 }
+                                .toolbar{
+                                    ToolbarItem(placement: .navigationBarLeading){
+                                    Image(systemName:"xmark.square.fill")
+                                    }
+                                
+                                    ToolbarItem(placement: .navigationBarTrailing){
+                                        Image(systemName:"checkmark.square.fill")
+                                    }
+                            }
+                            }
                                 
                         }
                     }
